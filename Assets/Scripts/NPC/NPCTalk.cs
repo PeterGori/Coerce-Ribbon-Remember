@@ -56,9 +56,6 @@ public class NPCTalk : MonoBehaviour
         
         // Hides Text Block 2
         TextBlock2.GetComponent<SpriteRenderer>().enabled = false;
-        
-        // Unsets Active
-        Active = false;
     }
 
     private void CheckSurroundings()

@@ -23,6 +23,7 @@ public class Door : MonoBehaviour
         {
             DoorAnim.SetBool("Open", true);
             DoorCollider.enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
             // DoorCollider.size = new Vector2(1f,0f);
             // DoorCollider.transform.position = new Vector2(DoorCollider.transform.position.x, StartY + 2f);
         }
@@ -30,6 +31,7 @@ public class Door : MonoBehaviour
         {
             DoorAnim.SetBool("Open", false);
             DoorCollider.enabled = true;
+            GetComponent<SpriteRenderer>().enabled = true;
             // DoorCollider.size = new Vector2(1f,1f);
             // DoorCollider.transform.position = new Vector2(DoorCollider.transform.position.x, StartY);
         }
