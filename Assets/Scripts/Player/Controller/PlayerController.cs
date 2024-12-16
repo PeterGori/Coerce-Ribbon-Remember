@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public static float MovementInputDirection;
     private float time;
     private bool FacingRight = true;
+    public bool HasRibbon = false;
     public static bool Grounded;
     public float MovementSpeed;
     public float JumpForce;
@@ -20,12 +22,14 @@ public class PlayerController : MonoBehaviour
     public LayerMask TheGround;
     public Transform GroundCheck;
     public Vector2 GroundCheckRadius;
+    public GameObject InvisibleWall;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         PlayerRb = GetComponent<Rigidbody2D>();
         Player = GameObject.Find("Player");
+        InvisibleWall = GameObject.Find("Invisible Wall");
     }
 
     // Update is called once per frame
@@ -34,6 +38,11 @@ public class PlayerController : MonoBehaviour
         CheckInput();
         CheckMovementDirection();
         CheckSurroundings();
+
+        if (HasRibbon)
+        {
+            InvisibleWall.GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     void FixedUpdate()
