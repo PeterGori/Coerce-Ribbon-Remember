@@ -14,10 +14,10 @@ TagManager:
   - 
   - 
   - FG
-  - 
-  - 
+  - Cube
   - Player
-  - 
+  - Door
+  - Button
   - 
   - BG
   - 
@@ -43,3 +43,5 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  - FG
+  - Obstacles
